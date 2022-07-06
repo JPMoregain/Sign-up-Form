@@ -6,8 +6,8 @@
 
 .container {
     display: flex;
-    max-width: 100vw;
-    max-height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .imagecontainer {
@@ -20,6 +20,7 @@
 .formcontainer {
     height: 100vh;
     width: 62vw;
+    overflow: hidden;
 }
 
 .logobar {
@@ -97,7 +98,7 @@ label {
 .middle {
     margin-top: 18px;
     padding-left: 50px;
-    width: 100%;
+    width: 100vw;
     height: 28%;
     box-shadow: 0 4px 3px -2px gray;
 }
@@ -107,15 +108,6 @@ label {
     width: 100vw;
     height: 36%;
     margin-top: 3px;
-}
-
-.form_left {
-    display: inline-block;
-}
-
-.form_right {
-    display: inline-block;
-    margin-left: 80px;
 }
 
 #button {
@@ -132,13 +124,39 @@ label {
     font-weight: bold;
 }
 
-.bottom p {;
+.bottom p {
     margin-left: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .bottom a {
     color: #596D48;
     font-weight: bold;
     text-decoration: none;
+}
+
+form {
+    display: flex;
+}
+
+.form_left {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.form_right {
+    position: relative;
+    left: 15%;
+    margin-top: 20px;
+}
+
+input:focus {
+    border-color: blue;
+    box-shadow: 0 5px 4px -4px gray;
+    outline: none;
+    border-width: 1.2px;
+}
+
+.error:invalid {
+    border-color: red;
 }
